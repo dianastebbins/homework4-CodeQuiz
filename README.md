@@ -62,7 +62,7 @@ Top left corner, a View High Scores link
 Top right corner, a time
     visible during play
     not visible during High Score screen
-First Page
+Intro Page
     Title (Coding Quiz Challenge)
     Instruction ()
     Button to start (Start Quiz)
@@ -87,7 +87,43 @@ High Score Page
 
 ## Pseudocode
 ```
-
+Begin by first displaying Intro Page 
+When Intro Page is displayed (see Page Design Notes for components)
+    clear timer and update display
+    when user clicks Start Quiz button, switch to Quiz Page
+When Quiz Page is displayed (see Page Design Notes for components)
+    set currentQuestion counter to 0
+    start timer and update display
+    loop:
+        display question from array, per currentQuestion counter
+        display corresponding answer options related to question object
+        when user selects ABCorD answer
+            evaluate it
+                if wrong answer was selected
+                    remove 10 seconds from the timer
+                    display message Wrong!
+                otherwise
+                    display message Correct!
+            increment currentQuestion counter
+    when last question in array is answered
+        stop timer
+        switch to Result Page
+    OR
+    if timer runs out
+        switch to Result Page
+When Results Page is displayed (see Page Design Notes for components)
+    show current timer/score
+    when user presses Submit on Enter Initials line
+        if no data/initial were entered
+            display error message
+        otherwise
+            save initials and high score to memory
+            switch to High Scores page
+When High Scores Page is displayed (see Page Design Notes for components)
+    display current high score(s) list in memory
+    when user presses Go Back button switch to Intro Page
+    when user presses Clear High Scores button, remove initials and scores from memory
+When user presses High Scores link in top left, switch to High Scores Page
 ```
 
 ## Installation
