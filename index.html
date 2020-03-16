@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- We need to bring in the bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- and now apply custom styling for this particular project -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Code Quiz</title>
+</head>
+<body>
+    <!-- navbar -->
+
+    <!-- intro content -->
+    <div class="container" id="intro-section">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2>Coding Quiz Challenge</h2>
+                <p>
+                    Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!
+                </p>
+                <button>Start Quiz</button>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    
+    <!-- quiz content -->
+    <div class="container" id="quiz-section">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2>Question goes here</h2>
+                <button>A option</button>
+                <button>B option</button>
+                <button>C option</button>
+                <button>D option</button>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <hr>
+                <p>Correct! or Wrong!</p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <!-- result content -->
+    <div class="container" id="restuls-section">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2>End of Quiz</h2>
+                <p>Your final score: 11</p>
+                <input type="text">Enter initials: <button>Submit</button>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <!-- high scores -->
+    <div class="container" id="restuls-section">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2>High Scores</h2>
+                <!-- list here built in javascript -->
+                <button>Go Back</button><button>Clear High Scores</button>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    
+    <!-- Here we bring in some scripts required to allow some Bootstrap components to work. -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
+    <!--- Bootstrap JavaScript CDN -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
