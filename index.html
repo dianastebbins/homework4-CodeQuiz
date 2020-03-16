@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- We need to bring in the bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,8 +14,28 @@
 
     <title>Code Quiz</title>
 </head>
+
 <body>
     <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
+        <!-- if I have this collapsible, I am losing justify-content-between -->
+        <!-- i know i want justify-content-between, i think i can live without the collapsible hamburger because 
+        there are only two items on the navbar anyway and only 1 is a link. 
+        Hamburger would be extra clicks for user with no real gain as compared to the two items just stacking. -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="highScore.html">High Score</a>
+            <a class="navbar-brand" href="#">Timer: </a>
+        </div>
+    </nav>
+    <!-- can this be improved on? can have hamuburger...is it really needed with just two items? -->
+    <nav class="navbar navbar-light justify-content-between">
+        <a class="navbar-brand" href="highScore.html">High Score</a>
+        <a class="navbar-brand" href="#">Timer: </a>
+    </nav>
 
     <!-- intro content -->
     <div class="container" id="intro-section">
@@ -23,14 +44,15 @@
             <div class="col-sm-8">
                 <h2>Coding Quiz Challenge</h2>
                 <p>
-                    Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!
+                    Try to answer the following code-related questions within the time limit. Keep in mind that
+                    incorrect answers will penalize your score time by ten seconds!
                 </p>
                 <button>Start Quiz</button>
             </div>
             <div class="col-sm-2"></div>
         </div>
     </div>
-    
+
     <!-- quiz content -->
     <div class="container" id="quiz-section">
         <div class="row">
@@ -42,7 +64,8 @@
                     <button type="button" class="btn btn-secondary">A option</button>
                     <button type="button" class="btn btn-secondary">B option</button>
                     <button type="button" class="btn btn-secondary">C option, longer answer</button>
-                    <button type="button" class="btn btn-secondary">D option, super super super super duper long answer</button>
+                    <button type="button" class="btn btn-secondary">D option, super super super super duper long
+                        answer</button>
                 </div>
             </div>
             <div class="col-sm-2"></div>
@@ -82,14 +105,15 @@
             <div class="col-sm-2"></div>
         </div>
     </div>
-    
+
     <!-- Here we bring in some scripts required to allow some Bootstrap components to work. -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
     <!--- Bootstrap JavaScript CDN -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-    
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
