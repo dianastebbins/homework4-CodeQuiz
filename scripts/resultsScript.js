@@ -8,4 +8,5 @@ var submitBtn = document.querySelector("#submit-btn");
 
 submitBtn.addEventListener("click", function(){
     console.log(`Submit clicked!`);
+    window.location.replace("highScore.html");
 });
