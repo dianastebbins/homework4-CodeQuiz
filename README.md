@@ -61,10 +61,10 @@ THEN I can save my initials and score
 ```
 Top left corner, a View High Scores link
     visible during play
-    not visible during High Score screen itself
-Top right corner, a time
-    visible during play
-    not visible during High Score screen
+-    not visible during High Score screen itself
+-Top right corner, a time
+-    visible during play
+-    not visible during High Score screen
 Intro Page
     Title (Coding Quiz Challenge)
     Instruction ()
@@ -74,30 +74,29 @@ Quiz Page
         more Bold than ABCD answer options
     Multiple choice ABCD buttons, stacked
         Shows result after selection (Correct! or Wrong!)
-        Divider line between ABCD and result message
-End of Game Page
-    Title (End of Game)
-    Final Score
-    Enter Initials prompt with entry box
+-        Divider line between ABCD and result message
+-End of Game Page
+-    Title (End of Game)
+-    Final Score
+-    Enter Initials prompt with entry box
     Submit button (example was inline with initial entry box)
-High Score Page
-    Title (High Scores)
+-High Score Page
+-    Title (High Scores)
     Go Back button (back to start of quiz)
-    Clear High Scores button 
-        empties recorded high scores
-        refreshes High Scores page
+-    Clear High Scores button 
+-        empties recorded high scores
+-        refreshes High Scores page
 ```
 
 ## Pseudocode
 ```
 Begin by first displaying Intro Page 
-When Intro Page is displayed (see Page Design Notes for components)
-    clear timer and update display
+-When Intro Page is displayed (see Page Design Notes for components)
+-    clear timer and update display
     when user clicks Start Quiz button, switch to Quiz Page
-When Quiz Page is displayed (see Page Design Notes for components)
+-When Quiz Page is displayed (see Page Design Notes for components)
     set currentQuestion counter to 0
-    start timer and update display
-    loop:
+-    start timer and update display
         display question from array, per currentQuestion counter
         display corresponding answer options related to question object
         when user selects ABCorD answer
@@ -108,24 +107,24 @@ When Quiz Page is displayed (see Page Design Notes for components)
                 otherwise
                     display message Correct!
             increment currentQuestion counter
-    when last question in array is answered
-        stop timer
-        switch to Result Page
-    OR
-    if timer runs out
-        switch to Result Page
-When Results Page is displayed (see Page Design Notes for components)
-    show current timer/score
-    when user presses Submit on Enter Initials line
-        if no data/initial were entered
-            display error message
-        otherwise
-            save initials and high score to memory
-            switch to High Scores page
-When High Scores Page is displayed (see Page Design Notes for components)
-    display current high score(s) list in memory
-    when user presses Go Back button switch to Intro Page
-    when user presses Clear High Scores button, remove initials and scores from memory
+-    when last question in array is answered
+-        stop timer
+-        switch to Result Page
+-    OR
+-    if timer runs out
+-        switch to Result Page
+-When Results Page is displayed (see Page Design Notes for components)
+-    show current timer/score
+-    when user presses Submit on Enter Initials line
+-        if no data/initial were entered
+-            display error message
+-        otherwise
+-            save initials and high score to memory
+-            switch to High Scores page
+-When High Scores Page is displayed (see Page Design Notes for components)
+-    display current high score(s) list in memory
+-    when user presses Go Back button switch to Intro Page
+-    when user presses Clear High Scores button, remove initials and scores -from memory
 When user presses High Scores link in top left, switch to High Scores Page
 ```
 

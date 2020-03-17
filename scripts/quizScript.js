@@ -6,18 +6,21 @@
 // optionB-btn
 // optionC-btn
 // optionD-btn
-// answer-result
-// answer-result-msg
+// status-section
+// status-msg
+var timerEl = document.querySelector("#timer-display");
 var questionEl = document.querySelector("#question");
 var optionABtn = document.querySelector("#optionA-btn");
 var optionBBtn = document.querySelector("#optionB-btn");
 var optionCBtn = document.querySelector("#optionC-btn");
 var optionDBtn = document.querySelector("#optionD-btn");
-var messageEl = document.querySelector("#answer-result-msg");
+var statusMsgEl = document.querySelector("#status-msg");
 
-var currentQuestion = 0; 
-var correctAnswer = "";
-var score = 60;
+var currentQuestion = 0;    // track current question
+var currentAnswer = "";     // track current correct answer option
+var score = 60;             // track players progress
+var timerInterval;          // timer
+
 
 var questions = [
     {
@@ -103,52 +106,76 @@ var questions = [
 ];
 
 function refreshPage() {
-    if(currentQuestion < questions.length && score > 0) {
+    // as long as there is a question left and time has not run out...
+    if (currentQuestion < questions.length && score > 0) {
+        // get the next question to display
         var aQuestion = questions[currentQuestion];
-        questionEl.innerHTML = aQuestion.question; 
+
+        // the question...
+        questionEl.innerHTML = aQuestion.question;
+        // the answer options
         optionABtn.textContent = aQuestion.answerOptions.a;
         optionBBtn.textContent = aQuestion.answerOptions.b;
         optionCBtn.textContent = aQuestion.answerOptions.c;
         optionDBtn.textContent = aQuestion.answerOptions.d;
-        correctAnswer = aQuestion.correctOption;
+        // save reference to the correct option
+        currentAnswer = aQuestion.correctOption;
+
+        // // update the timer...IS THIS REDUNDANT?
+        // timerEl.textContent = "Timer: " + score;
     } else {
-        //stop timer
-        //reset counter
-        window.location.replace("results.html");
+        stopTimer();
     }
 };
 
+function stopTimer() {
+    console.log("You should save something here...");
+    clearInterval(timerInterval);
+    // window.location.replace("results.html");
+}
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+        score--;
+        timerEl.textContent = "Timer: " + score;
+
+        if (secondsLeft === 0) {
+            // clearInterval(timerInterval);
+            stopTimer();
+        }
+
+    }, 1000);
+}
+
 function evaluateSelection(theSelection) {
-    if(theSelection === correctAnswer) {
-        messageEl.textContent = "Correct!";
+    // TODO...this message flashes off and on, maybe display it for
+    // just one or two seconds?
+    if (theSelection === currentAnswer) {
+        statusMsgEl.textContent = "Correct!";
     } else {
-        messageEl.textContent = "Wrong!";
+        statusMsgEl.textContent = "Wrong!";
         score -= 10;
     }
+
+    currentQuestion++;
+    refreshPage();
 }
 
 optionABtn.addEventListener("click", function () {
     evaluateSelection("a");
-    currentQuestion++;
-    refreshPage();
 });
 
 optionBBtn.addEventListener("click", function () {
     evaluateSelection("b");
-    currentQuestion++;
-    refreshPage();
 });
 
 optionCBtn.addEventListener("click", function () {
     evaluateSelection("c");
-    currentQuestion++;
-    refreshPage();
 });
 
 optionDBtn.addEventListener("click", function () {
     evaluateSelection("d");
-    currentQuestion++;
-    refreshPage();
 });
 
+startTimer();
 refreshPage();
