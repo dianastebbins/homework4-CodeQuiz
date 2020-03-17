@@ -4,7 +4,10 @@
 A timed multiple choice quiz that allows user to save a high score
 
 ## General Notes
-### Special Characters:
+### Navbar
+```
+If I have include collapsible as a class, I lose justify-content-between spacing. I know I want justify-content-between, I think i can live without the collapsible hamburger because there are only two items on the navbar anyway and only 1 is a link. Hamburger would be extra clicks for user with no real gain as compared to the two items just stacking.
+```
 ### User Inputs
 ### Password Generation
 ### Problems

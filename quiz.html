@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- We need to bring in the bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- and now apply custom styling for this particular project -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Code Quiz Questions Page</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-light justify-content-between">
+        <a class="navbar-brand" href="highScore.html">High Score</a>
+        <a class="navbar-brand" id="timer-display" href="#">Timer: </a>
+    </nav>
+
+    <!-- quiz content -->
+    <div class="container" id="quiz-section">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2>Question goes here</h2>
+                <div class="btn-group-vertical" role="group" aria-label="multiple-choice-options">
+                    <!-- as written, these show with centered text and no space between buttons -->
+                    <button type="button" class="btn btn-secondary" id="optionA-btn">A option</button>
+                    <button type="button" class="btn btn-secondary" id="optionB-btn">B option</button>
+                    <button type="button" class="btn btn-secondary" id="optionC-btn">C option, longer answer</button>
+                    <button type="button" class="btn btn-secondary" id="optionD-btn">D option, super super super super duper long
+                        answer</button>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" id="answer-result">
+                <hr>
+                <p id="answer-result-msg">Correct! or Wrong!</p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    
+    <script src="scripts/quizScript.js"></script>
+    
+</body>
+</html>

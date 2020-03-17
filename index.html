@@ -12,29 +12,14 @@
     <!-- and now apply custom styling for this particular project -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <title>Code Quiz</title>
+    <title>Code Quiz Intro Page</title>
 </head>
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
-        <!-- if I have this collapsible, I am losing justify-content-between -->
-        <!-- i know i want justify-content-between, i think i can live without the collapsible hamburger because 
-        there are only two items on the navbar anyway and only 1 is a link. 
-        Hamburger would be extra clicks for user with no real gain as compared to the two items just stacking. -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-            <a class="navbar-brand" href="highScore.html">High Score</a>
-            <a class="navbar-brand" href="#">Timer: </a>
-        </div>
-    </nav>
-    <!-- can this be improved on? can have hamuburger...is it really needed with just two items? -->
     <nav class="navbar navbar-light justify-content-between">
         <a class="navbar-brand" href="highScore.html">High Score</a>
-        <a class="navbar-brand" href="#">Timer: </a>
+        <a class="navbar-brand" id="timer-display" href="#">Timer: </a>
     </nav>
 
     <!-- intro content -->
@@ -47,60 +32,7 @@
                     Try to answer the following code-related questions within the time limit. Keep in mind that
                     incorrect answers will penalize your score time by ten seconds!
                 </p>
-                <button>Start Quiz</button>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-    </div>
-
-    <!-- quiz content -->
-    <div class="container" id="quiz-section">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <h2>Question goes here</h2>
-                <div class="btn-group-vertical" role="group" aria-label="multiple-choice-options">
-                    <!-- as written, these show with centered text and no space between buttons -->
-                    <button type="button" class="btn btn-secondary">A option</button>
-                    <button type="button" class="btn btn-secondary">B option</button>
-                    <button type="button" class="btn btn-secondary">C option, longer answer</button>
-                    <button type="button" class="btn btn-secondary">D option, super super super super duper long
-                        answer</button>
-                </div>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <hr>
-                <p>Correct! or Wrong!</p>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-    </div>
-
-    <!-- result content -->
-    <div class="container" id="restuls-section">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <h2>End of Quiz</h2>
-                <p>Your final score: 11</p>
-                <input type="text">Enter initials: <button>Submit</button>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-    </div>
-
-    <!-- high scores -->
-    <div class="container" id="restuls-section">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <h2>High Scores</h2>
-                <!-- list here built in javascript -->
-                <button>Go Back</button><button>Clear High Scores</button>
+                <button id="start-btn">Start Quiz</button>
             </div>
             <div class="col-sm-2"></div>
         </div>
@@ -112,7 +44,8 @@
     <!--- Bootstrap JavaScript CDN -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
 
-    <script src="script.js"></script>
+    <script src="scripts/indexScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.0/d3.min.js"></script> <!--top or bottom? look it up. Dennis up, Clint below -->
 
 </body>
 
