@@ -7,6 +7,7 @@
 // optionC-btn
 // optionD-btn
 // status-section
+// status-divider
 // status-msg
 var timerEl = document.querySelector("#timer-display");
 var questionEl = document.querySelector("#question");
@@ -14,6 +15,7 @@ var optionABtn = document.querySelector("#optionA-btn");
 var optionBBtn = document.querySelector("#optionB-btn");
 var optionCBtn = document.querySelector("#optionC-btn");
 var optionDBtn = document.querySelector("#optionD-btn");
+var statusDividerEl = document.querySelector("#status-divider");
 var statusMsgEl = document.querySelector("#status-msg");
 
 // track players progress, initial currentScore comes from intro page reset to 60. Hopefully
@@ -109,7 +111,7 @@ function refreshPage() {
     // as long as there is a question left and time has not run out...
     if (currentQuestion < questions.length && currentScore > 0) {
         // get the next question to display
-        var aQuestion = questions[currentQuestion];
+        var aQuestion = questions[currentQuestion]
 
         // the question...
         questionEl.innerHTML = aQuestion.question;
@@ -118,6 +120,7 @@ function refreshPage() {
         optionBBtn.textContent = aQuestion.answerOptions.b;
         optionCBtn.textContent = aQuestion.answerOptions.c;
         optionDBtn.textContent = aQuestion.answerOptions.d;
+
         // save reference to the correct option
         currentAnswer = aQuestion.correctOption;
     } else {
@@ -142,12 +145,16 @@ function startTimer() {
             stopTimer();
         }
 
+        // this message flashes off and on in exampe project,
+        // so we are only displaying it for up to 3 seconds
+        if (currentScore % 3 === 0) {
+            statusMsgEl.textContent = "";
+        }
+
     }, 1000);
 }
 
 function evaluateSelection(theSelection) {
-    // TODO...this message flashes off and on, maybe display it for
-    // just one or two seconds?
     if (theSelection === currentAnswer) {
         statusMsgEl.textContent = "Correct!";
     } else {

@@ -8,9 +8,18 @@ A timed multiple choice quiz that allows user to save a high score
 ```
 If I have include collapsible as a class, I lose justify-content-between spacing. I know I want justify-content-between, I think i can live without the collapsible hamburger because there are only two items on the navbar anyway and only 1 is a link. Hamburger would be extra clicks for user with no real gain as compared to the two items just stacking.
 ```
-### User Inputs
-### Password Generation
+### Alerts
+```
+I added an "are you sure" alert when the user clicks the Clear button on the High Scores page. The error message if the user clicks Submit from the Results page without entering initials is found in an alert as well.
+```
+### High Scores
+```
+High Scores are displayed with the newest created one at the top of the list
+```
 ### Problems
+```
+No major problems I was left unhappy with...other than I should have started say...Saturday instead of Monday. Live and learn.
+```
 
 ## Table of Contents
 * [Project Details](#project-details)
@@ -61,10 +70,10 @@ THEN I can save my initials and score
 ```
 Top left corner, a View High Scores link
     visible during play
--    not visible during High Score screen itself
+    not visible during High Score screen itself
 Top right corner, a time
     visible during play
--    not visible during High Score screen
+    not visible during High Score screen
 Intro Page
     Title (Coding Quiz Challenge)
     Instruction ()
@@ -74,19 +83,19 @@ Quiz Page
         more Bold than ABCD answer options
     Multiple choice ABCD buttons, stacked
         Shows result after selection (Correct! or Wrong!)
--        Divider line between ABCD and result message
--            these both should only display briefly
+        Divider line between ABCD and result message
+            these both should only display briefly
 End of Game/Quiz Results Page
     Title (Quiz Results)
     Final Score
--    Enter Initials prompt with entry box
+    Enter Initials prompt with entry box
     Submit button (example was inline with initial entry box)
 High Score Page
     Title (High Scores)
     Go Back button (back to start of quiz)
     Clear High Scores button 
--        empties recorded high scores
--        refreshes High Scores page
+        empties recorded high scores
+        refreshes High Scores page
 ```
 
 ## Pseudocode
@@ -114,18 +123,18 @@ When Quiz Page is displayed (see Page Design Notes for components)
     OR
     if timer runs out
         switch to Result Page
--When Results Page is displayed (see Page Design Notes for components)
+When Results Page is displayed (see Page Design Notes for components)
     show current timer/score
--    when user presses Submit on Enter Initials line
--        if no data/initial were entered
--            display error message
--        otherwise
--            save initials and high score to memory
--            switch to High Scores page
--When High Scores Page is displayed (see Page Design Notes for components)
--    display current high score(s) list in memory
--    when user presses Go Back button switch to Intro Page
--    when user presses Clear High Scores button, remove initials and scores -from memory
+    when user presses Submit on Enter Initials line
+        if no data/initial were entered
+            display error message
+        otherwise
+            save initials and high score to memory
+            switch to High Scores page
+When High Scores Page is displayed (see Page Design Notes for components)
+    display current high score(s) list in memory
+    when user presses Go Back button switch to Intro Page
+    when user presses Clear High Scores button, remove initials and scores -from memory
 When user presses High Scores link in top left, switch to High Scores Page
 ```
 
