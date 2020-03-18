@@ -16,9 +16,10 @@ var optionCBtn = document.querySelector("#optionC-btn");
 var optionDBtn = document.querySelector("#optionD-btn");
 var statusMsgEl = document.querySelector("#status-msg");
 
+// track players progress, initial currentScore comes from intro page reset to 60. Hopefully
+var currentScore = localStorage.getItem("savedScore");
 var currentQuestion = 0;    // track current question
 var currentAnswer = "";     // track current correct answer option
-var score = 60;             // track players progress
 var timerInterval;          // timer
 
 
@@ -107,7 +108,7 @@ var questions = [
 
 function refreshPage() {
     // as long as there is a question left and time has not run out...
-    if (currentQuestion < questions.length && score > 0) {
+    if (currentQuestion < questions.length && currentScore > 0) {
         // get the next question to display
         var aQuestion = questions[currentQuestion];
 
@@ -120,27 +121,25 @@ function refreshPage() {
         optionDBtn.textContent = aQuestion.answerOptions.d;
         // save reference to the correct option
         currentAnswer = aQuestion.correctOption;
-
-        // // update the timer...IS THIS REDUNDANT?
-        // timerEl.textContent = "Timer: " + score;
     } else {
         stopTimer();
     }
+
+    // console.log("quizScript.refreshPage() function");
 };
 
 function stopTimer() {
-    console.log("You should save something here...");
+    localStorage.setItem("savedScore", currentScore);
     clearInterval(timerInterval);
-    // window.location.replace("results.html");
+    window.location.replace("results.html");
 }
 
 function startTimer() {
     timerInterval = setInterval(function () {
-        score--;
-        timerEl.textContent = "Timer: " + score;
+        currentScore--;
+        timerEl.textContent = "Timer: " + currentScore;
 
         if (secondsLeft === 0) {
-            // clearInterval(timerInterval);
             stopTimer();
         }
 
@@ -154,28 +153,33 @@ function evaluateSelection(theSelection) {
         statusMsgEl.textContent = "Correct!";
     } else {
         statusMsgEl.textContent = "Wrong!";
-        score -= 10;
+        // let's not allow negative scores
+        if (currentScore < 10) {
+            currentScore = 0;
+        } else {
+            currentScore -= 10;
+        }
     }
 
-    currentQuestion++;
+        currentQuestion++;
+        refreshPage();
+    }
+
+    optionABtn.addEventListener("click", function () {
+        evaluateSelection("a");
+    });
+
+    optionBBtn.addEventListener("click", function () {
+        evaluateSelection("b");
+    });
+
+    optionCBtn.addEventListener("click", function () {
+        evaluateSelection("c");
+    });
+
+    optionDBtn.addEventListener("click", function () {
+        evaluateSelection("d");
+    });
+
+    startTimer();
     refreshPage();
-}
-
-optionABtn.addEventListener("click", function () {
-    evaluateSelection("a");
-});
-
-optionBBtn.addEventListener("click", function () {
-    evaluateSelection("b");
-});
-
-optionCBtn.addEventListener("click", function () {
-    evaluateSelection("c");
-});
-
-optionDBtn.addEventListener("click", function () {
-    evaluateSelection("d");
-});
-
-startTimer();
-refreshPage();
