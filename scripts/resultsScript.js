@@ -17,21 +17,21 @@ function refreshPage() {
     finalScoreEl.textContent = "Your final score: " + savedScore;
 }
 
-submitBtn.addEventListener("click", function (event) {
+submitBtn.addEventListener("click", function () {
     // make sure user entered something
     var inits = initialsEl.value;
     if (inits !== "") {
-        // create user high score object from validated inits and saved score
-        var thisUser = {
+        // combine validated user initials and current score into one object
+        var userEntry = {
             userInits: inits,
             userScore: savedScore
         };
-        // add this newest high score to the top of the list
-        savedStats.unshift(thisUser);
+        // add object to the top of the list, newest on top,
         // and save it for future reference
+        savedStats.unshift(userEntry);
         localStorage.setItem("highScores", JSON.stringify(savedStats));
         
-        // move to high scores and display
+        // move to high scores page
         window.location.replace("highScore.html");
     } else {
         alert("Initials cannot be blank.");
