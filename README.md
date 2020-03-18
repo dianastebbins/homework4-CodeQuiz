@@ -139,12 +139,13 @@ When user presses High Scores link in top left, switch to High Scores Page
 ```
 
 ## Installation
-url to deployed app: 
+url to deployed app: https://dianastebbins.github.io/homework4-CodeQuiz/
 
 ## Usage
 
 ## Credits
 Requirements copied from provided Homework files of Full Stack Coding Bootcamp.
+https://www.guru99.com/javascript-interview-questions-answers.html for lists of JavaScript interview questions and answers
 
 ## License
 
@@ -153,3 +154,4 @@ Requirements copied from provided Homework files of Full Stack Coding Bootcamp.
 ## Contributing
 
 ## Tests
+LOL
