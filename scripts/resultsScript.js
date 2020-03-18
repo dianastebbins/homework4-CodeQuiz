@@ -15,6 +15,11 @@ var savedStats = JSON.parse(localStorage.getItem("highScores"));
 function refreshPage() {
     timerEl.textContent = "Timer: " + savedScore;
     finalScoreEl.textContent = "Your final score: " + savedScore;
+    // first time through or after user clears High Scores, savedStats could be null
+    if(savedStats === null){
+        // if so, give it an empty array to work with later
+        savedStats = [];
+    }
 }
 
 submitBtn.addEventListener("click", function () {
@@ -28,6 +33,7 @@ submitBtn.addEventListener("click", function () {
         };
         // add object to the top of the list, newest on top,
         // and save it for future reference
+        console.log(savedStats);
         savedStats.unshift(userEntry);
         localStorage.setItem("highScores", JSON.stringify(savedStats));
         
