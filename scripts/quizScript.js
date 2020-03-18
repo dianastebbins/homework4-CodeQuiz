@@ -22,7 +22,6 @@ var currentQuestion = 0;    // track current question
 var currentAnswer = "";     // track current correct answer option
 var timerInterval;          // timer
 
-
 var questions = [
     {
         question: "Words 1",
@@ -124,22 +123,22 @@ function refreshPage() {
     } else {
         stopTimer();
     }
-
-    // console.log("quizScript.refreshPage() function");
 };
 
 function stopTimer() {
-    localStorage.setItem("savedScore", currentScore);
+    // game is over...stop the time, record the score and then go display it
     clearInterval(timerInterval);
+    localStorage.setItem("savedScore", currentScore);
     window.location.replace("results.html");
 }
 
 function startTimer() {
+    // wow. looks amazingly like a piece of inclass code that starts a timer. Thanks.
     timerInterval = setInterval(function () {
         currentScore--;
         timerEl.textContent = "Timer: " + currentScore;
 
-        if (secondsLeft === 0) {
+        if (currentScore === 0) {
             stopTimer();
         }
 
@@ -161,25 +160,28 @@ function evaluateSelection(theSelection) {
         }
     }
 
-        currentQuestion++;
-        refreshPage();
-    }
-
-    optionABtn.addEventListener("click", function () {
-        evaluateSelection("a");
-    });
-
-    optionBBtn.addEventListener("click", function () {
-        evaluateSelection("b");
-    });
-
-    optionCBtn.addEventListener("click", function () {
-        evaluateSelection("c");
-    });
-
-    optionDBtn.addEventListener("click", function () {
-        evaluateSelection("d");
-    });
-
-    startTimer();
+    // setup for the next question
+    currentQuestion++;
     refreshPage();
+}
+
+// evaluate if the answer selected was the correct one
+optionABtn.addEventListener("click", function () {
+    evaluateSelection("a");
+});
+
+optionBBtn.addEventListener("click", function () {
+    evaluateSelection("b");
+});
+
+optionCBtn.addEventListener("click", function () {
+    evaluateSelection("c");
+});
+
+optionDBtn.addEventListener("click", function () {
+    evaluateSelection("d");
+});
+
+// let's do this!
+startTimer();
+refreshPage();

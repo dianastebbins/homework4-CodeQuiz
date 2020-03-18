@@ -15,6 +15,7 @@ function refreshPage(){
 }
 
 backBtn.addEventListener("click", function(){
+    // no need to cleanup, index will reset everything
     window.location.replace("index.html");
 });
 
