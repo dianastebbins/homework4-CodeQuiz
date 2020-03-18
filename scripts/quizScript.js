@@ -24,83 +24,83 @@ var timerInterval;          // timer
 
 var questions = [
     {
-        question: "Words 1",
-        correctOption: "a",
-        answerOptions: {
-            a: "truth",
-            b: "lies",
-            c: "more lies",
-            d: "pants afire"
-        }
-    },
-    {
-        question: "Words 2",
-        correctOption: "b",
-        answerOptions: {
-            a: "lies",
-            b: "truth",
-            c: "more lies",
-            d: "pants afire"
-        }
-    },
-    {
-        question: "Words 3",
+        question: "Which company developed JavaScript?",
         correctOption: "c",
         answerOptions: {
-            a: "lies",
-            b: "more lies",
-            c: "truth",
-            d: "pants afire"
+            a: "Microsoft",
+            b: "Google",
+            c: "Netscape",
+            d: "IBM"
         }
     },
     {
-        question: "Words 4",
-        correctOption: "d",
-        answerOptions: {
-            a: "lies",
-            b: "more lies",
-            c: "pants afire",
-            d: "truth"
-        }
-    },
-    {
-        question: "Words 5",
+        question: "Which symbol is used for comments in JavaScript?",
         correctOption: "b",
         answerOptions: {
-            a: "lies",
-            b: "truth",
-            c: "more lies",
-            d: "pants afire"
+            a: "<!-- comment -->",
+            b: "// comment",
+            c: "$(`#comment`)",
+            d: "[comment]"
         }
     },
     {
-        question: "Words 6",
-        correctOption: "a",
-        answerOptions: {
-            a: "truth",
-            b: "lies",
-            c: "more lies",
-            d: "pants afire"
-        }
-    },
-    {
-        question: "Words 7",
+        question: 'What would be the result of 3+2+"7" in JavaScript?',
         correctOption: "d",
         answerOptions: {
-            a: "lies",
-            b: "more lies",
-            c: "pants afire",
-            d: "truth"
+            a: "10",
+            b: "327",
+            c: "42",
+            d: "57"
         }
     },
     {
-        question: "Words 8",
+        question: "Which is NOT a looping structure in JavaScript?",
         correctOption: "c",
         answerOptions: {
-            a: "lies",
-            b: "more lies",
-            c: "truth",
-            d: "pants afire"
+            a: "For",
+            b: "While",
+            c: "Forever",
+            d: "do-while"
+        }
+    },
+    {
+        question: "What is the use of Push method in JavaScript?",
+        correctOption: "c",
+        answerOptions: {
+            a: "Push pushes elements out of an array to empty it",
+            b: "Push adds only a single element to an array",
+            c: "Push adds element(s) to the end of an array",
+            d: "Push adds element(s) to the beginning of an array"
+        }
+    },
+    {
+        question: "What is an anonymous function in JavaScript?",
+        correctOption: "b",
+        answerOptions: {
+            a: "A function declared without parameters",
+            b: "A function declared without any named identifier",
+            c: "A function that returns only booleans",
+            d: "A function that runs randomly"
+        }
+    },
+    {
+        question: "Which is NOT an example of a boolean operator in JavaScript?",
+        correctOption: "d",
+        answerOptions: {
+            a: "&&",
+            b: "!",
+            c: "||",
+            d: "$"
+        }
+    },
+    {
+        question: "How do you declare a three dimensional array in JavaScript?",
+        correctOption: "c",
+        answerOptions: {
+            a: "var myArray = [3];",
+            b: "var myArray = [][][];",
+            c: "var myArray = [[[]]];",
+            d: "var myArray = []*3;"
         }
     }
 ];
